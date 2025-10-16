@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pencil Coordinate Logger</title>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #eee;
+    font-family: sans-serif;
+  }
+  #controls {
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  canvas {
+    border: 1px solid #444;
+    touch-action: none; /* important for iPad Pencil */
+    background: white;
+  }
+</style>
+</head>
+<body>
+  <div id="controls">
+    <input type="file" id="templateInput" accept="image/*">
+    <button id="clearBtn">Clear</button>
+    <button id="exportBtn">Export CSV</button>
+  </div>
+  <canvas id="canvas" width="800" height="600"></canvas>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let drawing = false;
+let points = [];
+let bgImage = null;
+
+// ---- Upload template image ----
+document.getElementById('templateInput').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const img = new Image();
+  img.onload = () => {
+    bgImage = img;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  };
+  img.src = URL.createObjectURL(file);
+});
+
+// ---- Clear canvas ----
+document.getElementById('clearBtn').addEventListener('click', () => {
+  points = [];
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (bgImage) ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+});
+
+// ---- Drawing handlers ----
+canvas.addEventListener('pointerdown', (e) => {
+  if (e.pointerType === 'pen') {
+    drawing = true;
+    addPoint(e);
+  }
+});
+
+canvas.addEventListener('pointermove', (e) => {
+  if (drawing && e.pointerType === 'pen') {
+    addPoint(e);
+    drawLine();
+  }
+});
+
+canvas.addEventListener('pointerup', () => drawing = false);
+canvas.addEventListener('pointercancel', () => drawing = false);
+
+function addPoint(e) {
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  const t = performance.now();
+  points.push({ t, x, y });
+}
+
+function drawLine() {
+  if (points.length < 2) return;
+  const p1 = points[points.length - 2];
+  const p2 = points[points.length - 1];
+  ctx.beginPath();
+  ctx.moveTo(p1.x, p1.y);
+  ctx.lineTo(p2.x, p2.y);
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+}
+
+// ---- Export to CSV ----
+document.getElementById('exportBtn').addEventListener('click', () => {
+  if (points.length === 0) {
+    alert('No points recorded!');
+    return;
+  }
+
+  let csv = 'timestamp_ms,x,y\n';
+  points.forEach(p => {
+    csv += `${p.t.toFixed(3)},${p.x.toFixed(2)},${p.y.toFixed(2)}\n`;
+  });
+
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'drawing_data.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+</script>
+</body>
+</html>
