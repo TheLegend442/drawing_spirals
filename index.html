@@ -99,24 +99,25 @@ function drawLine() {
 }
 
 // ---- Export to CSV ----
-document.getElementById('exportBtn').addEventListener('click', () => {
-  if (points.length === 0) {
-    alert('No points recorded!');
-    return;
-  }
+const exportBtn = document.getElementById('exportBtn');
 
-  let csv = 'timestamp_ms,x,y\n';
-  points.forEach(p => {
-    csv += `${p.t.toFixed(3)},${p.x.toFixed(2)},${p.y.toFixed(2)}\n`;
-  });
+exportBtn.addEventListener('click', () => {
+    const now = new Date();
+    const timestamp = now.toISOString().replace(/[:.]/g,'-');
+    const filename = `drawing_${timestamp}.csv`;
 
-  const blob = new Blob([csv], { type: 'text/csv' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'drawing_data.csv';
-  a.click();
-  URL.revokeObjectURL(url);
+    let csvContent = "timestamp_ms,x,y\n";
+    for (const point of window.drawData) {
+        csvContent += `${point.timestamp},${point.x},${point.y}\n`;
+    }
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    link.setAttribute("href", URL.createObjectURL(blob));
+    link.setAttribute("download", filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 });
 </script>
 </body>
