@@ -39,6 +39,7 @@ const ctx = canvas.getContext('2d');
 let drawing = false;
 let points = [];
 let bgImage = null;
+let bgImageDrawInfo = null;
 
 // ---- Upload template image ----
 document.getElementById('templateInput').addEventListener('change', (e) => {
@@ -48,7 +49,26 @@ document.getElementById('templateInput').addEventListener('change', (e) => {
   img.onload = () => {
     bgImage = img;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+    // calculate aspect ratio scaling
+    const canvasRatio = canvas.width / canvas.height;
+    const imgRatio = img.width / img.height;
+    let drawWidth, drawHeight, offsetX, offsetY;
+
+    if (imgRatio > canvasRatio) {
+      drawWidth = canvas.width;
+      drawHeight = canvas.width / imgRatio;
+      offsetX = 0;
+      offsetY = (canvas.height - drawHeight) / 2;
+    } else {
+      drawHeight = canvas.height;
+      drawWidth = canvas.height * imgRatio;
+      offsetX = (canvas.width - drawWidth) / 2;
+      offsetY = 0;
+    }
+
+    ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+    bgImageDrawInfo = { offsetX, offsetY, drawWidth, drawHeight };
   };
   img.src = URL.createObjectURL(file);
 });
@@ -57,7 +77,15 @@ document.getElementById('templateInput').addEventListener('change', (e) => {
 document.getElementById('clearBtn').addEventListener('click', () => {
   points = [];
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  if (bgImage) ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+  if (bgImage && bgImageDrawInfo) {
+    ctx.drawImage(
+      bgImage,
+      bgImageDrawInfo.offsetX,
+      bgImageDrawInfo.offsetY,
+      bgImageDrawInfo.drawWidth,
+      bgImageDrawInfo.drawHeight
+    );
+  }
 });
 
 // ---- Drawing handlers ----
@@ -84,6 +112,7 @@ function addPoint(e) {
   const y = e.clientY - rect.top;
   const t = performance.now();
   points.push({ t, x, y });
+  window.drawData = points; // optional: store globally
 }
 
 function drawLine() {
@@ -107,8 +136,8 @@ exportBtn.addEventListener('click', () => {
     const filename = `drawing_${timestamp}.csv`;
 
     let csvContent = "timestamp_ms,x,y\n";
-    for (const point of window.drawData) {
-        csvContent += `${point.timestamp},${point.x},${point.y}\n`;
+    for (const point of points) {
+        csvContent += `${point.t},${point.x},${point.y}\n`;
     }
 
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
