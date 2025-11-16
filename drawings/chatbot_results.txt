@@ -1,0 +1,36 @@
+
+
+===========VPRAŠANJA V ANGLEŠČINI=============
+
+
+You: Where is Podsreda castle located?
+Bot: Podsreda castle is located in the heart of Orlica and the Kozjansko park, 5 km off the square in Podsreda.
+You: which castle has Programmes for children and youth?
+Bot: Sevnica castle has programmes for children and youth. They offer animated guided tours, puppet or creative workshops, and games in the park.
+You: Could you explain me the raven legend from Mokrice castle?
+Bot: The legend of the raven at Mokrice Castle goes like this:
+
+During the times of Turkish intrusions, a raven with a speared neck flew above the castle. This raven, struck by the arrow,  fell to the castle yard, alerting the people of the impending danger. 
+The grateful count, seeing this brave bird fall to its death, granted the raven immortality on the castle coat of arms.  This symbol of protection and vigilance remains with the castle even today.
+
+Let me know if you'd like to know more about the castle or its other legends!
+
+
+===========VPRAŠANJA V SLOVENŠČINI=============
+
+
+You: Kje se nahaja grad Podsreda?
+Bot: Grad Podsreda se nahaja v kraju Podsreda, ki je v Kozjanskem parku, 5 km oddaljen od centra Podsreda.
+You: Kateri grad ponuja programe za otroke in mlade?
+Bot: Grad Rajhenburg ponuja programe za otroke in mlade, kot so:
+
+* Animirani ogledi
+* Lutkovne in ustvarjalne delavnice
+* Grajske igre
+
+You: Prosim če razložiš legendo o krokarju iz gradu Mokrice.
+Bot: Pri tem se moraš zavedati, da je to legenda in ne resnica. 
+ 
+Legenda pravi, da v času turških vpadov na grajsko dvorišče priletela vrana, ki je podlegla strelu zavojevalcev in tako opozorila na bližajočo se nevarnost. Graščak naj bi ji zato namenil mesto v grbu.
+Ta legenda opisuje kako vranjo, ki je bila v času turških vpadov v gradu Mokrice, je s svojimi spraševalnimi sposobnostmi opremili z zavojevalcem.
+Na splošno, legenda lahko predstavlja interpretacijo zgodovinskih dogodkov, ki so se dogajali v gradu.

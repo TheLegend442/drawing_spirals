@@ -1,0 +1,43 @@
+Total hyperparameter combinations to try: 144
+New best hyperparameters found: {'learning_rate': 0.01, 'weight_decay': 0.0, 'hidden_dim1': 256, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 64} with Val Loss: 1.4607
+New best hyperparameters found: {'learning_rate': 0.01, 'weight_decay': 0.0, 'hidden_dim1': 256, 'hidden_dim2': 64, 'batch_size': 64, 'latent_dim': 64} with Val Loss: 1.1435
+New best hyperparameters found: {'learning_rate': 0.01, 'weight_decay': 0.0, 'hidden_dim1': 256, 'hidden_dim2': 128, 'batch_size': 64, 'latent_dim': 128} with Val Loss: 0.8897
+Combination 10/144: {'learning_rate': 0.01, 'weight_decay': 0.0, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 128}
+New best hyperparameters found: {'learning_rate': 0.01, 'weight_decay': 0.0, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 128} with Val Loss: 0.8531
+New best hyperparameters found: {'learning_rate': 0.01, 'weight_decay': 0.0, 'hidden_dim1': 512, 'hidden_dim2': 128, 'batch_size': 32, 'latent_dim': 128} with Val Loss: 0.7918
+Combination 20/144: {'learning_rate': 0.01, 'weight_decay': 1e-05, 'hidden_dim1': 256, 'hidden_dim2': 64, 'batch_size': 64, 'latent_dim': 128}
+New best hyperparameters found: {'learning_rate': 0.01, 'weight_decay': 1e-05, 'hidden_dim1': 256, 'hidden_dim2': 128, 'batch_size': 64, 'latent_dim': 128} with Val Loss: 0.7554
+New best hyperparameters found: {'learning_rate': 0.01, 'weight_decay': 1e-05, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 128} with Val Loss: 0.6978
+Combination 30/144: {'learning_rate': 0.01, 'weight_decay': 1e-05, 'hidden_dim1': 512, 'hidden_dim2': 128, 'batch_size': 32, 'latent_dim': 128}
+New best hyperparameters found: {'learning_rate': 0.01, 'weight_decay': 0.0001, 'hidden_dim1': 256, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 128} with Val Loss: 0.6182
+New best hyperparameters found: {'learning_rate': 0.01, 'weight_decay': 0.0001, 'hidden_dim1': 256, 'hidden_dim2': 64, 'batch_size': 64, 'latent_dim': 128} with Val Loss: 0.5756
+New best hyperparameters found: {'learning_rate': 0.01, 'weight_decay': 0.0001, 'hidden_dim1': 256, 'hidden_dim2': 128, 'batch_size': 64, 'latent_dim': 64} with Val Loss: 0.5095
+Combination 40/144: {'learning_rate': 0.01, 'weight_decay': 0.0001, 'hidden_dim1': 256, 'hidden_dim2': 128, 'batch_size': 64, 'latent_dim': 128}
+New best hyperparameters found: {'learning_rate': 0.001, 'weight_decay': 0.0, 'hidden_dim1': 256, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 64} with Val Loss: 0.4145
+Combination 50/144: {'learning_rate': 0.001, 'weight_decay': 0.0, 'hidden_dim1': 256, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 128}
+Combination 60/144: {'learning_rate': 0.001, 'weight_decay': 0.0, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 64, 'latent_dim': 128}
+Combination 70/144: {'learning_rate': 0.001, 'weight_decay': 1e-05, 'hidden_dim1': 256, 'hidden_dim2': 128, 'batch_size': 32, 'latent_dim': 128}
+Combination 80/144: {'learning_rate': 0.001, 'weight_decay': 1e-05, 'hidden_dim1': 512, 'hidden_dim2': 128, 'batch_size': 64, 'latent_dim': 128}
+New best hyperparameters found: {'learning_rate': 0.001, 'weight_decay': 0.0001, 'hidden_dim1': 256, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 64} with Val Loss: 0.3965
+New best hyperparameters found: {'learning_rate': 0.001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 64} with Val Loss: 0.3959
+Combination 90/144: {'learning_rate': 0.001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 128}
+New best hyperparameters found: {'learning_rate': 0.001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 128} with Val Loss: 0.3904
+New best hyperparameters found: {'learning_rate': 0.001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 64, 'latent_dim': 128} with Val Loss: 0.3900
+New best hyperparameters found: {'learning_rate': 0.001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 128, 'batch_size': 32, 'latent_dim': 128} with Val Loss: 0.3854
+New best hyperparameters found: {'learning_rate': 0.001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 128, 'batch_size': 64, 'latent_dim': 64} with Val Loss: 0.3811
+New best hyperparameters found: {'learning_rate': 0.001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 128, 'batch_size': 64, 'latent_dim': 128} with Val Loss: 0.3789
+Combination 100/144: {'learning_rate': 0.0001, 'weight_decay': 0.0, 'hidden_dim1': 256, 'hidden_dim2': 64, 'batch_size': 64, 'latent_dim': 128}
+Combination 110/144: {'learning_rate': 0.0001, 'weight_decay': 0.0, 'hidden_dim1': 512, 'hidden_dim2': 128, 'batch_size': 32, 'latent_dim': 128}
+Combination 120/144: {'learning_rate': 0.0001, 'weight_decay': 1e-05, 'hidden_dim1': 256, 'hidden_dim2': 128, 'batch_size': 64, 'latent_dim': 128}
+Combination 130/144: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 256, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 128}
+New best hyperparameters found: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 256, 'hidden_dim2': 128, 'batch_size': 32, 'latent_dim': 64} with Val Loss: 0.3784
+New best hyperparameters found: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 256, 'hidden_dim2': 128, 'batch_size': 32, 'latent_dim': 128} with Val Loss: 0.3764
+New best hyperparameters found: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 256, 'hidden_dim2': 128, 'batch_size': 64, 'latent_dim': 64} with Val Loss: 0.3754
+New best hyperparameters found: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 256, 'hidden_dim2': 128, 'batch_size': 64, 'latent_dim': 128} with Val Loss: 0.3732
+New best hyperparameters found: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 64} with Val Loss: 0.3728
+New best hyperparameters found: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 32, 'latent_dim': 128} with Val Loss: 0.3714
+Combination 140/144: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 64, 'latent_dim': 128}
+New best hyperparameters found: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 64, 'batch_size': 64, 'latent_dim': 128} with Val Loss: 0.3704
+New best hyperparameters found: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 128, 'batch_size': 32, 'latent_dim': 64} with Val Loss: 0.3702
+New best hyperparameters found: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 128, 'batch_size': 32, 'latent_dim': 128} with Val Loss: 0.3701
+Best hyperparameters: {'learning_rate': 0.0001, 'weight_decay': 0.0001, 'hidden_dim1': 512, 'hidden_dim2': 128, 'batch_size': 32, 'latent_dim': 128} with Val Loss: 0.3701
