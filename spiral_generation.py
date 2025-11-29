@@ -430,9 +430,9 @@ def main():
     FLAT_PERCENTAGE = 0.3                       # Percentage of flat region in tightness window
 
     ## Flatness parameters
-    MAX_INS_PER_ROTATION = 0.5                  # Max number of insertions per full rotation
-    MAX_EXT_PER_ROTATION = 0.3                  # Max number of extensions per full rotation
-    INS_LEN_RANGE = (0.2*np.pi, 0.7*np.pi)      # Range for insertion length in radians
+    MAX_INS_PER_ROTATION = 1                    # Max number of insertions per full rotation
+    MAX_EXT_PER_ROTATION = 0.8                  # Max number of extensions per full rotation
+    INS_LEN_RANGE = (0.2*np.pi, 0.55*np.pi)     # Range for insertion length in radians
     START_OFFSET_RANGE = (0.1*np.pi, 0.5*np.pi) # Range for extension start offset in radians
     END_OFFSET_RANGE = (0.1*np.pi, 0.5*np.pi)   # Range for extension end offset in radians
     DISP_FAC_R_RANGE = (0.003, 0.02)            # Range for displacement factor for radius
